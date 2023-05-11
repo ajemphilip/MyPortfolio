@@ -222,7 +222,7 @@ export function Platform(props) {
         rotation={[1.65, -0.3, -3.02]}
         scale={0.68}
       >
-         <meshStandardMaterial emissiveIntensity={12} emissive={'#0009FF'} color={'#E7E7E7'}></meshStandardMaterial>
+        <meshStandardMaterial emissiveIntensity={12} emissive={'#0009FF'} color={'#E7E7E7'}></meshStandardMaterial>
       </mesh>
       <mesh
         castShadow
@@ -282,22 +282,22 @@ export function Platform(props) {
         <meshStandardMaterial {...texture}></meshStandardMaterial>
       </mesh>
       <group scale={0.2} position={[10.01, 4, -5.92]}>
-      <mesh
-        ref={skills}
-        onClick={handleSkills}
-        onPointerEnter={() => { handleEnter(skills, skillsText) }}
-        onPointerLeave={() => { handleLeave(skills, skillsText) }}
-        castShadow
-        receiveShadow
-        geometry={nodes.Text010.geometry}
-        material={nodes.Text010.material}
-        
-        rotation={[Math.PI / 2, 0, 0]}
-      >
-        <meshStandardMaterial {...texture}></meshStandardMaterial>
-      </mesh>
+        <mesh
+          ref={skills}
+          onClick={handleSkills}
+          onPointerEnter={() => { handleEnter(skills, skillsText) }}
+          onPointerLeave={() => { handleLeave(skills, skillsText) }}
+          castShadow
+          receiveShadow
+          geometry={nodes.Text010.geometry}
+          material={nodes.Text010.material}
+
+          rotation={[Math.PI / 2, 0, 0]}
+        >
+          <meshStandardMaterial {...texture}></meshStandardMaterial>
+        </mesh>
       </group>
-      
+
       <mesh
         ref={artProjects}
         onClick={handleArt}
@@ -335,7 +335,7 @@ export function Platform(props) {
         material={nodes.Cube006.material}
         position={[10.01, 3.4, -5.92]}
       >
-       <meshStandardMaterial {...texture}></meshStandardMaterial>
+        <meshStandardMaterial {...texture}></meshStandardMaterial>
       </mesh>
       <mesh
         ref={webProjects}
@@ -373,7 +373,7 @@ export function Platform(props) {
         position={[9.16, 6.21, -5.92]}
         size={1.0}
       >
-       <meshStandardMaterial {...texture}></meshStandardMaterial>
+        <meshStandardMaterial {...texture}></meshStandardMaterial>
       </mesh>
       <mesh
         castShadow

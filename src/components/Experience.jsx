@@ -50,39 +50,39 @@ export default function Experience(props) {
     setMenuIndicator(prevmenuIndicator => !prevmenuIndicator)
   }
   const clickHandler = () => {
-    if(blockMenu) {
-    soundClick()
-    if (!menuIndicator) {
-      setBlockMenu(false)
-      setMenuIndicator(true)
-      setCameraPositionTemp({
-        positionX: cameraRef.current.position.x,
-        positionY: cameraRef.current.position.y,
-        positionZ: cameraRef.current.position.z,
-        rotationX: cameraRef.current.rotation._x,
-        rotationY: cameraRef.current.rotation._y,
-        rotationZ: cameraRef.current.rotation._z,
-        scrolloffset: scrollData.offset,
-      })
-      gsap.to(cameraRef.current.position, { duration: 1, x: 9.2, y: 5, z: 1 })
-      gsap.to(cameraRef.current.rotation, { duration: 1, x: 0, y: -Math.PI * 2, z: 0 })
-      setTimeout(()=>{
-        setBlockMenu(true)
-      },1100)
-    }
-    else {
-      setBlockMenu(false)
-      gsap.to(cameraRef.current.position, { duration: 1, x: cameraPositionTemp.positionX, y: cameraPositionTemp.positionY, z: cameraPositionTemp.positionZ })
-      gsap.to(cameraRef.current.rotation, { duration: 1, x: cameraPositionTemp.rotationX, y: cameraPositionTemp.rotationY, z: cameraPositionTemp.rotationZ })
-      setTimeout(() => {
-        setMenuIndicator(false)
-        scrollData.el.scrollTop = (6 * window.innerHeight) * cameraPositionTemp.scrolloffset
-        scrollData.offset = cameraPositionTemp.scrolloffset
-        setBlockMenu(true)
-      }, 1500)
+    if (blockMenu) {
+      soundClick()
+      if (!menuIndicator) {
+        setBlockMenu(false)
+        setMenuIndicator(true)
+        setCameraPositionTemp({
+          positionX: cameraRef.current.position.x,
+          positionY: cameraRef.current.position.y,
+          positionZ: cameraRef.current.position.z,
+          rotationX: cameraRef.current.rotation._x,
+          rotationY: cameraRef.current.rotation._y,
+          rotationZ: cameraRef.current.rotation._z,
+          scrolloffset: scrollData.offset,
+        })
+        gsap.to(cameraRef.current.position, { duration: 1, x: 9.2, y: 5, z: 1 })
+        gsap.to(cameraRef.current.rotation, { duration: 1, x: 0, y: -Math.PI * 2, z: 0 })
+        setTimeout(() => {
+          setBlockMenu(true)
+        }, 1100)
+      }
+      else {
+        setBlockMenu(false)
+        gsap.to(cameraRef.current.position, { duration: 1, x: cameraPositionTemp.positionX, y: cameraPositionTemp.positionY, z: cameraPositionTemp.positionZ })
+        gsap.to(cameraRef.current.rotation, { duration: 1, x: cameraPositionTemp.rotationX, y: cameraPositionTemp.rotationY, z: cameraPositionTemp.rotationZ })
+        setTimeout(() => {
+          setMenuIndicator(false)
+          scrollData.el.scrollTop = (6 * window.innerHeight) * cameraPositionTemp.scrolloffset
+          scrollData.offset = cameraPositionTemp.scrolloffset
+          setBlockMenu(true)
+        }, 1500)
+      }
     }
   }
-}
   const handleFeatured = () => {
     soundClick()
     setMenuIndicator(true)
@@ -139,15 +139,29 @@ export default function Experience(props) {
   texture.map.generateMipmaps = true
 
   return <>
- 
+
     <Shower></Shower>
     <Name></Name>
-    <Tiles sound={soundClick}></Tiles>
-    <Buttons texture={texture} handleFeatured={handleFeatured} handleSkills={handleSkills}></Buttons>
+    <Tiles
+      sound={soundClick}>
+    </Tiles>
+    <Buttons
+      texture={texture}
+      handleFeatured={handleFeatured}
+      handleSkills={handleSkills}>
+    </Buttons>
     <Hud renderPriority={1}>
-      <pointLight position={[70, 100, 120]} intensity={0.55}></pointLight>
-      <OrthographicCamera makeDefault position={[0, 0, 100]} />
-      <mesh onClick={clickHandler} ref={menuCube} position={[-size.width / 2 + 70, size.height / 2 - 60, -200]}>
+      <pointLight
+        position={[70, 100, 120]}
+        intensity={0.55}>
+      </pointLight>
+      <OrthographicCamera
+        makeDefault
+        position={[0, 0, 100]} />
+      <mesh
+        onClick={clickHandler}
+        ref={menuCube}
+        position={[-size.width / 2 + 70, size.height / 2 - 60, -200]}>
         <Box args={[60, 15, 60]}>
           <meshToonMaterial color={'#FFCC00'}></meshToonMaterial>
         </Box>
@@ -160,9 +174,16 @@ export default function Experience(props) {
       </mesh>
     </Hud>
     <Subway></Subway>
-    {/* <OrbitControls></OrbitControls> */}
-    <Platform texture={texture} sound={soundClick} scrollVal={scrollData} cameraRef={cameraRef} buttonController={changeButtonState} />
-    <Camera forwardedRef={cameraRef} menuController={menuIndicator} scrollData={scrollData}></Camera>
+    <Platform
+      texture={texture}
+      sound={soundClick}
+      scrollVal={scrollData}
+      cameraRef={cameraRef}
+      buttonController={changeButtonState} />
+    <Camera
+      forwardedRef={cameraRef}
+      menuController={menuIndicator}
+      scrollData={scrollData}></Camera>
     <Lighting></Lighting>
     <Sky sunPosition={[15000, 2000, 15000]}></Sky>
   </>

@@ -29,29 +29,56 @@ const Shower = () => {
         gsap.fromTo(textShower06.current.rotation, { x: 0, y: 0, z: 0 }, { duration: 1.1, x: 3, y: 1.2, repeat: -1 })
     })
     return (<>
-        <Text3D ref={textShower01} height={0.1} position={[-2, 6, -5.25]} size={0.4} font="/Teko_Regular.json">
+        <Text3D
+            ref={textShower01}
+            height={0.1}
+            position={[-2, 6, -5.25]}
+            size={0.4}
+            font="/Teko_Regular.json"
+        >
             1
             <meshToonMaterial color="orange" />
         </Text3D>
-        <Text3D ref={textShower02} position={[-2, 6, -5.25]} size={0.3} font="/Teko_Regular.json">
+        <Text3D
+            ref={textShower02}
+            position={[-2, 6, -5.25]}
+            size={0.3}
+            font="/Teko_Regular.json"
+        >
             0
             <meshToonMaterial color="green" />
         </Text3D>
 
-        <Text3D ref={textShower03} position={[-1.2, 6, -5.25]} size={0.4} font="/Teko_Regular.json">
+        <Text3D
+            ref={textShower03}
+            position={[-1.2, 6, -5.25]}
+            size={0.4}
+            font="/Teko_Regular.json">
             1
             <meshToonMaterial color="orange" />
         </Text3D>
-        <Text3D ref={textShower04} position={[-1.2, 6, -5.25]} size={0.3} font="/Teko_Regular.json">
+        <Text3D
+            ref={textShower04}
+            position={[-1.2, 6, -5.25]}
+            size={0.3}
+            font="/Teko_Regular.json">
             0
             <meshToonMaterial color="green" />
         </Text3D>
 
-        <Text3D ref={textShower05} position={[-3, 6, -5.1]} size={0.3} font="/Teko_Regular.json">
+        <Text3D
+            ref={textShower05}
+            position={[-3, 6, -5.1]}
+            size={0.3}
+            font="/Teko_Regular.json">
             1
             <meshToonMaterial color="green" />
         </Text3D>
-        <Text3D ref={textShower06} position={[-3, 8, -5.1]} size={0.1} font="/Teko_Regular.json">
+        <Text3D
+            ref={textShower06}
+            position={[-3, 8, -5.1]}
+            size={0.1}
+            font="/Teko_Regular.json">
             0
             <meshToonMaterial color="orange" />
         </Text3D>
