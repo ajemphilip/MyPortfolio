@@ -37,6 +37,9 @@ export function Contact(props) {
       <Text position={[0.001,0,-0.07]} rotation={[-Math.PI*0.5,Math.PI*0.5,0]} anchorX={"center"} anchorY={"center"} fontSize={'0.15'} lineHeight={1}  letterSpacing={0} textAlign="left" font={props.TekoBold} characters="featured" color={'black'}>
                     EMAIL
                 </Text>
+                <Text position={[0.001,0,0.1]} rotation={[-Math.PI*0.5,Math.PI*0.5,0]} anchorX={"center"} anchorY={"center"} fontSize={'0.08'} lineHeight={1}  letterSpacing={0} textAlign="left" font={props.TekoBold} characters="featured" color={'black'}>
+                    michalowskiphilip@gmail.com
+                </Text>
       </group>
       <group 
       ref={git}
@@ -46,7 +49,7 @@ export function Contact(props) {
       position={[13.82, 2.69, 11.307]}
       onClick={()=>{
        props.sound()
-        window.open(`https://github.com/philipn1`)
+        window.open(`https://github.com/ajemphilip`)
        
         }}>
       <mesh
