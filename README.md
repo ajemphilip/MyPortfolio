@@ -8,12 +8,11 @@ An Interactive and experimental portfolio website was created to showcase some o
 - Modern Interface with 3D models
 - GSAP X Three.JS Animation
 - Camera Movement on Scroll
-# Case Study
-## Pros
+## Pros of 3D Site
 - Immersive and Interesting 3D environment
 - Animated models and 3D real-world similarity
 - Original Presentation of Work
-## Cons
+## Cons of 3D Site
 - Low Accessibility, Usability
 - Low Performance - Unaccesible on older devices or devices with lower hardware performance
 # Example Images
